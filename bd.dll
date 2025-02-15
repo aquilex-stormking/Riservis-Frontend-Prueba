@@ -1,0 +1,18 @@
+-- bd.ciudades definition
+
+CREATE TABLE `ciudades` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_pais` int DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ciudades_paises_FK` (`id_pais`),
+  CONSTRAINT `ciudades_paises_FK` FOREIGN KEY (`id_pais`) REFERENCES `paises` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- bd.paises definition
+
+CREATE TABLE `paises` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
